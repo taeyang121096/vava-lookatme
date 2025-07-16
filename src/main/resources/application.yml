@@ -1,0 +1,21 @@
+spring:
+    application:
+        name: vava-lookatme
+
+    datasource:
+        url: jdbc:h2:tcp://localhost/~/lookAtMe
+        driver-class-name: org.h2.Driver
+        username: sa
+        password:
+
+    h2:
+        console:
+            enabled: true
+
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
