@@ -1,5 +1,6 @@
 package com.example.vavalookatme.domain_user.user.repo
 
+import com.example.vavalookatme.domain_user.user.domain.QUser.*
 import com.example.vavalookatme.domain_user.user.domain.User
 import com.querydsl.jpa.impl.JPAQueryFactory
 import jakarta.persistence.EntityManager
@@ -14,8 +15,8 @@ class UserQueryRepositoryImpl(
 
     override fun findActiveUsersByName(name: String): List<User> {
         return queryFactory
-            .selectFrom(QUser.user)
-            .where(QUser.user.name.eq(name).and(QUser.user.isActive.isTrue))
+            .selectFrom(user)
+            .where(user.name.eq(name).and(user.isActive.isTrue))
             .fetch()
     }
 

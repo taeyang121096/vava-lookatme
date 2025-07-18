@@ -25,7 +25,8 @@ class User(
 
     var phone: String,
 
-    var active: Boolean = true,
+    @Column(name = "active")
+    var isActive: Boolean = true,
 
     var joinDate: LocalDate = LocalDate.now(),
 
